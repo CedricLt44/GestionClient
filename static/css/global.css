@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  scroll-behavior: smooth;
+  font-family: 'Sofia', sans-serif;
+}
+
+:root {
+  --bg--color: #f1f9fc;
+  --second-icon--color: #eb427e;
+  --text--color: #252c38;
+  --main-color: #594cda;
+  --bg-second--color: #c2ddf2;
+}
+
+h1{
+  text-align: center;
+  color:var(--text--color);
+  font-weight:200;
+}
+nav {
+  display: flex;
+  padding: 0.2rem 4%;
+  justify-content: space-between;
+  background-color: var(--bg-second--color);
+  height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.navbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar i {
+  color: var(--text--color);
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.navbar i:hover {
+  color: var(--main-color);
+}
+
+.login{
+  justify-content: center;
+  display:flex;
+}
+
+nav button p {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text--color);
+}
+nav button{
+  cursor: pointer;
+  background: transparent;
+}
+nav button:hover p{
+  color: var(--second-icon--color);
+}
+nav h1 {
+  margin-top: 1.2rem;
+  align-items: center;
+  font-weight: 900;
+}
+
+footer i {
+  justify-content: center;
+  color: var(--main-color);
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ footer i:hover {
+  color:var(--second-icon--color)
+}
+
+footer{
+  color: #c2ddf2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 9%;
+  background-color: var(--text--color);
+}
+main {
+  min-height: 75vh;
+  padding: 1rem 6% 2rem;
+}
+main h1 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.form_login {
+  display: flex;
+  margin:0 auto;
+  padding:0;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vh;
+  background: var(--bg-second--color);
+}
+
+.form_signup {
+  display: flex;
+  margin:0 auto;
+  padding:0;
+  padding-top: 1.2rem;
+  border-radius: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 52vh;
+  width: 50vh;
+  background: var(--bg-second--color);
+}
+
+.form_login div {
+  display: block;
+  margin-bottom: 1rem;
+  padding-top: 4rem;
+}
+
+.form_signup div {
+  display: block;
+  margin-bottom: 1rem;
+  padding-top: 0.2rem;
+}
+
+.form_login label, .form_signup label{
+  font-weight: 900;
+  color: var(--main-color);
+  display: block;
+  height: 1rem;
+  width: 20rem;
+}
+
+.form_login input, .form_signup input{
+  display: block;
+  height: 2rem;
+  width: 20rem;
+  padding: 0.1rem;
+  border: 1px solid var(--text--color);
+  border-radius: 5px;
+}
+
+.form_login button,.form_signup button {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  color: var(--bg-second--color);
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 1rem;
+  background-color: var(--text--color);
+  border-radius: 0.5rem;
+  margin-bottom: 3rem;
+}
+.form_login button:hover, .form_signup button:hover {
+  background-color: var(--second-icon--color);
+}
+
+.heading{
+  background:var(--bg--color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.container{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap: 1rem;
+  grid-auto-rows: minmax(10rem,auto);
+}
+
+.container-facture{
+  margin-top: 2rem;
+}
+
+.card{
+  cursor: pointer;
+  padding: 0.5rem;
+  }
+
+.card:hover{
+  background-color:var(--bg--color);
+  border-radius: 1.5rem;
+}
+
+.card-facture{
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap: 4rem;
+  grid-auto-rows: minmax(2rem,auto);
+  padding: 1.2rem;
+  background-color: var(--bg--color);
+}
+
+.card-body{
+  padding: 0.5rem;
+  background: var(--bg--color);
+}
+.card-body p{
+  margin-bottom:0.5rem;
+}
+/* menu déroulant d'état */
+/* Conteneur principal */
+.dropdown {
+  margin-top: 1.5rem;
+  position: relative; /* Positionnement relatif pour gérer le dropdown */
+  display: inline-block; /* Garde les éléments côte à côte */
+  right: 0;
+}
+
+/* Bouton pour activer le menu */
+.dropdown-toggle {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #555; /* Couleur grise */
+  font-size: 1.5rem; /* Taille de l'icône */
+  cursor: pointer; /* Change le curseur en pointeur */
+}
+
+/* Le menu déroulant (invisible par défaut) */
+.dropdown-menu {
+  display: none; /* Masque le menu par défaut */
+  position: absolute; /* Positionne le menu par rapport au parent */
+  top: 100%; /* Place le menu sous le bouton */
+  left: 0; /* Aligne le menu à droite */
+  background-color: #ffffff; /* Couleur de fond blanche */
+  border: 1px solid #ddd; /* Bordure grise légère */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  border-radius: 5px; /* Coins arrondis */
+  z-index: 10; /* Assure que le menu apparaît au-dessus des autres éléments */
+  min-width: 150px; /* Largeur minimale du menu */
+}
+
+/* Options du menu */
+.dropdown-item {
+  padding: 0.8rem 1rem; /* Espacement interne des liens */
+  text-decoration: none; /* Supprime le soulignement */
+  color: #555; /* Couleur des liens */
+  display: block; /* Chaque lien occupe une ligne */
+  font-size: 0.9rem; /* Taille de texte standard */
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5; /* Fond gris clair au survol */
+  color: #333; /* Couleur plus foncée au survol */
+}
+
+/* Afficher le menu lorsque le parent est survolé */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Rend le menu visible */
+}
+/* designe page detail client */
+.container-client{
+background: var(--bg--color);
+width:auto;
+height: 75vh;
+}
+
+.container-detail{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0.8rem;
+  margin:1rem;
+  border:1px solid var(--main-color);
+  border-radius: 1.5rem;
+}
+
+.container-button{
+  display:flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem;
+  margin:1rem;
+  border:1px solid var(--main-color);
+  border-radius: 1.5rem;
+}
+
+.container-button button{
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color:var(--text--color);
+}
+.container-button button i{
+  font-size: 1.2rem;
+}
+.container-button button:hover{
+  background: var(--main-color);
+  cursor: pointer;
+}
+.container-comment{
+  align-items: center;
+  display:grid;
+  grid-template-columns: 90% 10%;
+  grid-template-rows: auto;
+}
+.container-text{
+  display:flex;
+  justify-content:left;
+  gap: 1rem;
+  padding: 0.8rem 10%;
+  margin:1rem;
+  border:1px solid var(--main-color);
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+}
+.container-comment button {
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color:var(--main-color);
+  font-size: 1.2rem;
+}
+.container-comment button:hover{
+  background-color: var(--second-icon--color);
+}
+
+/* design detail facture */
+.container-commande {
+  gap: 1rem;
+  padding: 0.8rem 2%;
+  margin:1rem;
+  display: grid;
+  grid-template-columns: 20% 60% 10% 10%;
+  grid-template-rows: auto;
+  border:1px solid var(--main-color);
+}
+
+.container-commande h3, .container-detail h3{
+  margin-bottom: 1rem;
+}

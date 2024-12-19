@@ -1,0 +1,25 @@
+{% extends 'backend/base.html' %}
+
+{% block content %}
+<h1>LOGIN</h1>
+<div class="form_login">
+        
+  <form method="POST" action=".">
+    {% csrf_token %}
+    <div>
+      <label>E-mail</label><br />
+      <input name="email" type="email"/>
+    </div>
+
+    <div>
+      <label>Password</label><br />
+      <input name="password" type="password"/>
+    </div>
+
+    <div>
+      <button>LOGIN</button>
+    </div>
+
+  </form>
+</div>
+  {% endblock content %}

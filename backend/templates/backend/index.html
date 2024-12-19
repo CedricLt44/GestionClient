@@ -1,0 +1,11 @@
+{% extends 'backend/base.html' %}
+
+{% block content %}
+  <header>
+    {% if request.user.is_authenticated %}
+    <h1>Bienvenue {{ user.name }} !</h1>
+    {% else %}
+      <h1>Bienvenue !</h1>
+    {% endif %}
+  </header>
+  {% endblock content %}

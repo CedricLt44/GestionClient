@@ -1,0 +1,35 @@
+{% extends 'backend/base.html' %}
+
+{% block content %}
+<h1>SIGN UP</h1>
+<div class="form_signup">
+        
+  <form method="POST" action=".">
+    {% csrf_token %}
+    <div>
+      <label>Name</label><br />
+      <input name="name" type="name" placeholder="Votre nom"/>
+    </div>
+
+    <div>
+      <label>E-mail</label><br />
+      <input name="email" type="email" placeholder="Votre e-mail"/>
+    </div>
+
+    <div>
+      <label>Password</label><br />
+      <input name="password1" type="password" placeholder="Votre mot de passe"/>
+    </div>
+
+    <div>
+      <label>Repeat Password</label><br />
+      <input name="password2" type="password" placeholder="Entrer votre mot de passe"/>
+    </div>
+
+    <div>
+      <button>SIGN UP</button>
+    </div>
+
+  </form>
+</div>
+{% endblock content %}
