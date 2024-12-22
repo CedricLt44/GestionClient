@@ -1,60 +1,22 @@
-{% extends 'backend/base.html' %}
-
-{% block content %}
+{% extends 'backend/base.html' %} {% block content %}
 <div class="heading">
   <h1>LISTE DES CLIENTS</h1>
+  <a href="{% url 'liste_client:add' %}"><i class="bx bxs-add-to-queue"></i></a>
 </div>
 
 <div class="container">
+  {% for customer in customers %}
   <div class="card">
-    <h2 class="card-title">Nom</h2>
+    <h2>{{ customer.name }}</h2>
     <div class="card-body">
       <p><strong>Contact :</strong></p>
+      <p>{{ customer.contact_name }}</p>
       <p><strong>Date de Création :</strong></p>
+      <p>{{ customer.created_at|date:"d/m/y" }}</p>
       <p><strong>En cours :</strong></p>
       <p><strong>Dernière commande:</strong></p>
     </div>
   </div>
-
-  <div class="card">
-    <h2 class="card-title">Nom</h2>
-    <div class="card-body">
-      <p><strong>Contact :</strong></p>
-      <p><strong>Date de Création :</strong></p>
-      <p><strong>En cours :</strong></p>
-      <p><strong>Dernière commande:</strong></p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2 class="card-title">Nom</h2>
-    <div class="card-body">
-      <p><strong>Contact :</strong></p>
-      <p><strong>Date de Création :</strong></p>
-      <p><strong>En cours :</strong></p>
-      <p><strong>Dernière commande:</strong></p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2 class="card-title">Nom</h2>
-    <div class="card-body">
-      <p><strong>Contact :</strong></p>
-      <p><strong>Date de Création :</strong></p>
-      <p><strong>En cours :</strong></p>
-      <p><strong>Dernière commande:</strong></p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2 class="card-title">Nom</h2>
-    <div class="card-body">
-      <p><strong>Contact :</strong></p>
-      <p><strong>Date de Création :</strong></p>
-      <p><strong>En cours :</strong></p>
-      <p><strong>Dernière commande:</strong></p>
-    </div>
-  </div>
-
+  {% endfor %}
 </div>
 {% endblock content %}
