@@ -16,7 +16,7 @@
       
       {% if request.user.is_authenticated %}
         <button><a href="#"><p>Factures</p></a></button>
-        <button><a href="#"><p>Clients</p></a></button>
+        <button><a href="{% url 'liste_client:customers' %}"><p>Clients</p></a></button>
       {% else %}
         <button><a href="{% url 'account:login' %}"><p>LOGIN</p></a></button>
         <button><a href="{% url 'account:signup' %}"><p>SIGN UP</p></a></button>
