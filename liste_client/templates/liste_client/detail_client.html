@@ -33,13 +33,11 @@
       ><button>
         <i class="bx bxs-edit"></i></button
     ></a>
-    <a href="{% url 'liste_client:delete' customer.id %}">
-      <button>
-        <i
-          onclick="return confirm('êtes-vous sur de vouloir supprimer ce projet')"
-          class="bx bxs-trash"
-        ></i>
-      </button>
+    <a
+      href="{% url 'liste_client:delete' customer.id %}"
+      onclick="return confirm('êtes-vous sur de vouloir supprimer ce projet')"
+    >
+      <i class="bx bxs-trash"></i>
     </a>
   </div>
 

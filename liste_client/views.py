@@ -116,7 +116,7 @@ def edit(request, pk):
 
 @login_required
 def delete(request, pk):
-   customer = get_object_or_404(Customer, created_by=request.user, pk=pk)
+   customer = Customer.objects.filter(created_by=request.user).get(pk=pk)
    customer.delete()
 
-   return redirect('/liste_client/')
+   return redirect('liste_client:customers')
