@@ -1,0 +1,55 @@
+{% extends 'backend/base.html' %} {% block content %}
+
+<h1>Editer un client</h1>
+<form method="post" action=".">
+  {% csrf_token %}
+  <div>
+    <label>Nom :</label><br />
+    <input type="text" name="name" value="{{ customer.name }}" maxlength="150" /><br />
+  </div>
+
+  <div>
+    <label>Nom du contact :</label><br />
+    <input type="text" name="contact_name" value="{{ customer.contact_name }}" maxlength="150" /><br />
+  </div>
+
+  <div>
+    <label>Nom du commercial:</label><br />
+    <input type="text" name="commercial_name" value="{{ customer.commercial_name }}" maxlength="150" /><br />
+  </div>
+
+  <div>
+    <label>E-mail:</label><br />
+    <input type="email" name="email" value="{{ customer.email }}" /><br />
+
+    <label>Tél.:</label>
+    <input type="phone" name="phone" 
+    pattern="^(?:\+33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
+    placeholder="06 12 34 56 78"
+    value="{{ customer.phone }}"></input>
+
+  </div>
+
+  <div>
+    <label>E-mail facturation:</label><br />
+    <input type="email" name="email_facturation" value="{{ customer.email_facturation }}"/><br />
+  </div>
+
+  <div>
+    <label>Adresse :</label>
+    <input type="text" name="address" value="{{ customer.address }}" maxlength="150" />
+
+    <label>Code postal :</label>
+    <input type="text" name="zip_code" value="{{ customer.zip_code }}" maxlength="16" pattern="[0-9]{5}" 
+    placeholder="75000" />
+
+    <label>Ville :</label>
+    <input type="text" name="city" value="{{ customer.city }}" maxlength="32" />
+  </div>
+
+  <div>
+    <button>ENREGISTRER</button>
+  </div>
+</form>
+<a href="{% url 'liste_client:customers' %}">RETOUR</a>
+{% endblock %}

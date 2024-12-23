@@ -29,8 +29,18 @@
   <div class="container-button">
     <button href="#">FACTURE</button>
     <button href="#">COMMANDE</button>
-    <button href="#"><i class="bx bxs-edit"></i></button>
-    <button><i class="bx bxs-trash"></i></button>
+    <a href="{% url 'liste_client:edit_client' customer.id %}"
+      ><button>
+        <i class="bx bxs-edit"></i></button
+    ></a>
+    <a href="{% url 'liste_client:delete' customer.id %}">
+      <button>
+        <i
+          onclick="return confirm('êtes-vous sur de vouloir supprimer ce projet')"
+          class="bx bxs-trash"
+        ></i>
+      </button>
+    </a>
   </div>
 
   <div class="container-comment">
@@ -48,4 +58,5 @@
     </div>
   </div>
 </div>
+<a href="{% url 'liste_client:customers' %}">RETOUR</a>
 {% endblock %}
