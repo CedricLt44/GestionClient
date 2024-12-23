@@ -8,14 +8,16 @@
   {% for customer in customers %}
   <div class="card">
     <h2>{{ customer.name }}</h2>
-    <div class="card-body">
-      <p><strong>Contact :</strong></p>
-      <p>{{ customer.contact_name }}</p>
-      <p><strong>Date de Création :</strong></p>
-      <p>{{ customer.created_at|date:"d/m/y" }}</p>
-      <p><strong>En cours :</strong></p>
-      <p><strong>Dernière commande:</strong></p>
-    </div>
+    <a href="{% url 'liste_client:detail_client' customer.pk %}">
+      <div class="card-body">
+        <p><strong>Contact :</strong></p>
+        <p>{{ customer.contact_name }}</p>
+        <p><strong>Date de Création :</strong></p>
+        <p>{{ customer.created_at|date:"d/m/y" }}</p>
+        <p><strong>En cours :</strong></p>
+        <p><strong>Dernière commande:</strong></p>
+      </div>
+    </a>
   </div>
   {% endfor %}
 </div>

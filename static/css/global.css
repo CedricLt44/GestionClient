@@ -15,6 +15,7 @@
   --text--color: #252c38;
   --main-color: #594cda;
   --bg-second--color: #c2ddf2;
+  --card--color: #626975;
 }
 
 h1 {
@@ -211,9 +212,9 @@ main h1 {
 }
 
 .card:hover {
-  background-color: var(--text--color);
+  background-color: var(--card--color);
   border-radius: 1.5rem;
-  color: var(--second-icon--color);
+  color: var(--bg-second--color);
 }
 
 .card-facture {

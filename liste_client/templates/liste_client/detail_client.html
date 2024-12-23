@@ -1,35 +1,28 @@
 {% extends 'backend/base.html' %} {% block content %}
 <div class="container-client">
-  <h1>NOM CLIENT</h1>
+  <h1>{{ customer.name }}</h1>
 
   <div class="container-detail">
     <div>
       <h2>Suivi</h2>
-      <p>Date de création:</p>
-      <p>Dernière commande:</p>
-      <p>Nbr de commande:</p>
-      <p>Commercial:</p>
+      <p>Date de création :{{ customer.created_at }}</p>
+      <p>Dernière commande :</p>
+      <p>Nbr de commande :</p>
+      <p>Commercial :{{ customer.commercial_name }}</p>
     </div>
 
     <div>
       <h2>Contacts</h2>
-      <p>Nom:</p>
-      <p>Email:</p>
-      <p>Phone:</p>
+      <p>Nom : {{ customer.contact_name }}</p>
+      <p>Email : {{ customer.email }}</p>
+      <p>Phone : {{ customer.phone }}</p>
     </div>
 
     <div>
       <h2>Adresse Facturation</h2>
-      <p>adresse:</p>
-      <p>Ville:</p>
-      <p>Code postal:</p>
-    </div>
-
-    <div>
-      <h2>Siège social</h2>
-      <p>adresse:</p>
-      <p>Ville:</p>
-      <p>Code postal:</p>
+      <p>adresse : {{ customer.address }}</p>
+      <p>Code postal : {{ customer.zip_code }}</p>
+      <p>Ville : {{ customer.city }}</p>
     </div>
   </div>
 
@@ -55,3 +48,4 @@
     </div>
   </div>
 </div>
+{% endblock %}

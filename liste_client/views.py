@@ -18,7 +18,7 @@ def customers(request):
 def customer(request, pk):
   customer = Customer.objects.filter(created_by=request.user).get(pk=pk)
 
-  return render (request, 'liste_client/liste_client.html', {
+  return render (request, 'liste_client/detail_client.html', {
     'customer': customer
   })
 
