@@ -4,3 +4,5 @@ __pycache__/
 *.pyd
 *.db
 env/
+.gitignore
+/suivi_client/settings.py
