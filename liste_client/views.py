@@ -129,7 +129,13 @@ def edit(request, pk):
 
 @login_required
 def delete(request, pk):
-   customer = Customer.objects.filter(created_by=request.user).get(pk=pk)
-   customer.delete()
+  # Si l'utilisateur est staff, il peut accéder à tous les clients
+  if request.user.is_staff:
+      customer = get_object_or_404(Customer, pk=pk)
+  else:
+      # Sinon, il ne peut accéder qu'aux clients qu'il a créés
+      customer = get_object_or_404(Customer, pk=pk, created_by=request.user)
 
-   return redirect('liste_client:customers')
+  customer.delete()
+
+  return redirect('liste_client:customers')
