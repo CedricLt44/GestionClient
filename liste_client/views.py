@@ -7,7 +7,12 @@ from .models import Customer
 # Create your views here.
 @login_required
 def customers(request):
-  customers = Customer.objects.filter(created_by=request.user)
+    # Si l'utilisateur est staff, il voit tous les clients
+  if request.user.is_staff:
+      customers = Customer.objects.all()
+  else:
+      # Sinon, il ne voit que les clients qu'il a créés
+      customers = Customer.objects.filter(created_by=request.user)
 
   return render(request, 'liste_client/liste_client.html',{
     'customers': customers
@@ -16,11 +21,16 @@ def customers(request):
 
 @login_required
 def customer(request, pk):
-  customer = Customer.objects.filter(created_by=request.user).get(pk=pk)
+    if request.user.is_staff:
+        # Les utilisateurs staff peuvent accéder à tous les clients
+        customer = get_object_or_404(Customer, pk=pk)
+    else:
+        # Les autres utilisateurs ne peuvent voir que leurs propres clients
+        customer = get_object_or_404(Customer, pk=pk, created_by=request.user)
 
-  return render (request, 'liste_client/detail_client.html', {
-    'customer': customer
-  })
+    return render(request, 'liste_client/detail_client.html', {
+        'customer': customer
+    })
 
 @login_required
 def add(request):
@@ -71,8 +81,11 @@ def add(request):
 
 @login_required
 def edit(request, pk):
-
-  customer = get_object_or_404(Customer, created_by=request.user, pk=pk)
+# Si staff, accès à tous les clients, sinon accès limité
+  if request.user.is_staff:
+      customer = get_object_or_404(Customer, pk=pk)
+  else:
+      customer = get_object_or_404(Customer, created_by=request.user, pk=pk)
 
   if request.method == 'POST':
     

@@ -16,5 +16,5 @@ class AdminCustomer(admin.ModelAdmin):
     'created_at',
     'created_by'
     )
-  
+
 admin.site.register(Customer, AdminCustomer)

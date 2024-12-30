@@ -211,6 +211,12 @@ main h1 {
   padding: 1rem;
 }
 
+.card a {
+  color: var(--text--color);
+}
+.card a:hover {
+  color: var(--by-second--color);
+}
 .card:hover {
   background-color: var(--card--color);
   border-radius: 1.5rem;
@@ -316,8 +322,9 @@ main h1 {
   color: white;
   background-color: var(--text--color);
 }
-.container-button button i {
-  font-size: 1.2rem;
+.container-button i {
+  font-size: 2.5rem;
+  color: var(--text--color);
 }
 .container-button button:hover {
   background: var(--main-color);

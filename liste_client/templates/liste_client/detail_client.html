@@ -29,9 +29,8 @@
   <div class="container-button">
     <button href="#">FACTURE</button>
     <button href="#">COMMANDE</button>
-    <a href="{% url 'liste_client:edit_client' customer.id %}"
-      ><button>
-        <i class="bx bxs-edit"></i></button
+    <a href="{% url 'liste_client:edit_client' customer.id %}">
+      <i class="bx bxs-edit"></i
     ></a>
     <a
       href="{% url 'liste_client:delete' customer.id %}"
