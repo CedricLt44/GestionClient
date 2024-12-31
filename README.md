@@ -2,9 +2,7 @@
 
 =====================================
 
-Suite du projet de conception d'un ERP SAAS.
-Finalité : pouvoir créer des software personnaliser orienté DATA.
-Maîtriser du début jusqu'a la fin le flux de données
+Je me suis lancé dans ce projet car je suis convaincu que l’avenir des progiciels réside dans des ERP optimisés par l’IA. Je pense également que les développeurs devront, à l’avenir, intégrer de plus en plus de Machine Learning dans leurs projets, tandis que les Analytics Engineers proposeront davantage de solutions logicielles pour enrichir ces projets.
 
 ### FRONTEND
 
