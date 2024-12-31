@@ -15,7 +15,7 @@ Créer des modèles d'inscription / connexion - done
 Page de liste de base pour les clients, les listes des clients, etc. - done
 Page de détail de base pour les factures, les listes des factures, etc. - done
 
-### CONFIGURERATION DU PROJET
+### CONFIGURATION DU PROJET
 
 Configurer l'environnement de développement-done
 créer le git init - done
