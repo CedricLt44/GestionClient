@@ -53,6 +53,15 @@ nav {
   display: flex;
 }
 
+a {
+  color: var(--text--color);
+  font-weight: 700;
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
 nav button p {
   font-size: 1.5rem;
   font-weight: 900;
@@ -326,6 +335,11 @@ main h1 {
   font-size: 2.5rem;
   color: var(--text--color);
 }
+
+.container-button i:hover {
+  color: var(--main-color);
+}
+
 .container-button button:hover {
   background: var(--main-color);
   cursor: pointer;
@@ -372,4 +386,44 @@ main h1 {
 .container-commande h3,
 .container-detail h3 {
   margin-bottom: 1rem;
+}
+
+.form-add-container {
+  background-color: var(--bg-second--color);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 1rem 30%;
+}
+
+.form-add-container button {
+  border-radius: 0.5rem;
+  background-color: var(--text--color);
+  color: var(--bg--color);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.form-add-container button:hover {
+  background-color: var(--main-color);
+}
+.label-name {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.label-address {
+  margin-bottom: 1.5rem;
+}
+
+.label-address input,
+.label-name input,
+input {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.retour {
+  margin: 0 30%;
 }

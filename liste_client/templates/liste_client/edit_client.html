@@ -1,24 +1,17 @@
 {% extends 'backend/base.html' %} {% block content %}
 
 <h1>Editer un client</h1>
-<form method="post" action=".">
+<form class="form-add-container" method="post" action=".">
   {% csrf_token %}
-  <div>
+  <div class="label-name">
     <label>Nom :</label><br />
     <input type="text" name="name" value="{{ customer.name }}" maxlength="150" /><br />
-  </div>
-
-  <div>
+ 
     <label>Nom du contact :</label><br />
     <input type="text" name="contact_name" value="{{ customer.contact_name }}" maxlength="150" /><br />
   </div>
 
-  <div>
-    <label>Nom du commercial:</label><br />
-    <input type="text" name="commercial_name" value="{{ customer.commercial_name }}" maxlength="150" /><br />
-  </div>
-
-  <div>
+  <div class="label-name">
     <label>E-mail:</label><br />
     <input type="email" name="email" value="{{ customer.email }}" /><br />
 
@@ -27,12 +20,16 @@
     pattern="^(?:\+33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
     placeholder="06 12 34 56 78"
     value="{{ customer.phone }}"></input>
-
   </div>
 
   <div>
     <label>E-mail facturation:</label><br />
     <input type="email" name="email_facturation" value="{{ customer.email_facturation }}"/><br />
+  </div>
+
+  <div class="label-address">
+    <label>Nom du commercial:</label><br />
+    <input type="text" name="commercial_name" value="{{ customer.commercial_name }}" maxlength="150" /><br />
   </div>
 
   <div>
@@ -51,5 +48,5 @@
     <button>ENREGISTRER</button>
   </div>
 </form>
-<a href="{% url 'liste_client:customers' %}">RETOUR</a>
+<a class="retour" href="{% url 'liste_client:customers' %}">RETOUR</a>
 {% endblock %}

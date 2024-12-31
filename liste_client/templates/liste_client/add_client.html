@@ -1,24 +1,17 @@
 {% extends 'backend/base.html' %} {% block content %}
 
 <h1>Ajouter un client</h1>
-<form method="post" action=".">
+<form class="form-add-container" method="post" action=".">
   {% csrf_token %}
-  <div>
+  <div class="label-name">
     <label>Nom :</label><br />
     <input type="text" name="name" required maxlength="150" /><br />
-  </div>
 
-  <div>
     <label>Nom du contact :</label><br />
     <input type="text" name="contact_name" required maxlength="150" /><br />
   </div>
 
-  <div>
-    <label>Nom du commercial:</label><br />
-    <input type="text" name="commercial_name" maxlength="150" /><br />
-  </div>
-
-  <div>
+  <div class="label-name">
     <label>E-mail:</label><br />
     <input type="email" name="email" required /><br />
 
@@ -27,7 +20,6 @@
     pattern="^(?:\+33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
     placeholder="06 12 34 56 78"
     required></input>
-
   </div>
 
   <div>
@@ -36,20 +28,26 @@
   </div>
 
   <div>
+    <label>Nom du commercial:</label><br />
+    <input type="text" name="commercial_name" maxlength="150" /><br />
+  </div>
+
+  <div class="label-address">
     <label>Adresse :</label>
     <input type="text" name="address" required maxlength="150" />
 
+    <label>Ville :</label>
+    <input type="text" name="city" required maxlength="32" />
+
+    
     <label>Code postal :</label>
     <input type="text" name="zip_code" required maxlength="16" pattern="[0-9]{5}" 
     placeholder="75000" />
-
-    <label>Ville :</label>
-    <input type="text" name="city" required maxlength="32" />
   </div>
 
   <div>
     <button type="submit">AJOUTER</button>
   </div>
 </form>
-<a href="{% url 'liste_client:customers' %}">RETOUR</a>
+<a class="retour" href="{% url 'liste_client:customers' %}">RETOUR</a>
 {% endblock %}
